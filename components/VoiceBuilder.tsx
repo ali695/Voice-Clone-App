@@ -1,5 +1,6 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import type { VoiceProfile, Vibe } from '../types';
+import { CloseIcon } from './icons/CloseIcon';
 
 interface VoiceBuilderProps {
     profile: VoiceProfile;
@@ -20,9 +21,34 @@ const UploadIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     </svg>
 );
 
+const FineTuneSlider: React.FC<{ label: string; value: number; min: number; max: number; step: number; onChange: (value: number) => void }> = ({ label, value, min, max, step, onChange }) => (
+    <div>
+        <label className="block text-sm font-medium text-slate-600 dark:text-slate-300 mb-2 flex justify-between">
+            <span>{label}</span>
+            <span className="font-mono text-slate-500 dark:text-slate-400">{value}</span>
+        </label>
+        <input
+            type="range"
+            min={min}
+            max={max}
+            step={step}
+            value={value}
+            onChange={(e) => onChange(parseFloat(e.target.value))}
+            className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full appearance-none cursor-pointer accent-sky-500 dark:accent-sky-400"
+        />
+    </div>
+);
+
 
 export const VoiceBuilder: React.FC<VoiceBuilderProps> = ({ profile, onUpdate, addLog }) => {
     
+    const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+    const [cloneSettings, setCloneSettings] = useState({
+        timbre: 0.75,
+        accent: 0.50,
+        age: 35,
+    });
+
     const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         onUpdate(profile.id, { description: e.target.value });
     };
@@ -36,13 +62,24 @@ export const VoiceBuilder: React.FC<VoiceBuilderProps> = ({ profile, onUpdate, a
     const handleFileUpload = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
-            if (file.size / 1024 / 1024 > 10) { // Increased limit
-                addLog('Error: File size should not exceed 10MB.');
+            if (file.size / 1024 / 1024 > 50) { // 50MB limit, approx 5 mins for WAV
+                addLog('Error: File size should not exceed 50MB.');
+                e.target.value = '';
                 return;
             }
-            addLog(`Uploaded ${file.name} for voice cloning. (Feature is a demonstration)`);
+            setUploadedFile(file);
+            addLog(`Uploaded ${file.name} for voice cloning.`);
         }
     }, [addLog]);
+
+    const handleRemoveFile = () => {
+        setUploadedFile(null);
+        addLog('Removed uploaded file.');
+        const input = document.getElementById('audio-upload') as HTMLInputElement;
+        if (input) {
+            input.value = '';
+        }
+    };
 
     return (
         <div className="space-y-6">
@@ -74,25 +111,59 @@ export const VoiceBuilder: React.FC<VoiceBuilderProps> = ({ profile, onUpdate, a
 
             <div>
                 <h3 className="text-md font-semibold text-slate-800 dark:text-slate-200 mb-3">Voice-to-Voice Cloning</h3>
-                 <label
-                    htmlFor="audio-upload"
-                    className="group cursor-pointer p-6 border-2 border-dashed border-slate-300 dark:border-slate-600 hover:border-sky-500 bg-slate-100/50 dark:bg-slate-800/50 hover:bg-slate-200/50 dark:hover:bg-slate-800 rounded-lg text-center transition-colors duration-300 flex flex-col items-center justify-center"
-                 >
-                    <UploadIcon className="w-10 h-10 text-slate-400 dark:text-slate-500 group-hover:text-sky-400 transition-colors mb-3" />
-                    <p className="text-slate-700 dark:text-slate-300 mb-1 font-semibold">
-                       <span className="text-sky-500 dark:text-sky-400">Click to upload</span> or drag and drop
-                    </p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Upload a 5-60 second audio sample (.mp3, .wav)</p>
-                    <input
-                        type="file"
-                        id="audio-upload"
-                        className="hidden"
-                        accept=".mp3,.wav,.ogg"
-                        onChange={handleFileUpload}
-                    />
-                </label>
-                <p className="text-xs text-slate-500 dark:text-slate-500 mt-2 text-center">Note: This is a UI demonstration. Voice cloning requires a dedicated backend.</p>
+                 {uploadedFile ? (
+                    <div className="p-4 border-2 border-sky-500 bg-sky-50 dark:bg-sky-900/30 rounded-lg text-center transition-all duration-300 flex flex-col items-center justify-center">
+                        <p className="text-slate-700 dark:text-slate-200 font-semibold truncate w-full px-4">{uploadedFile.name}</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">({(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)</p>
+                        <button onClick={handleRemoveFile} className="flex items-center gap-1.5 text-sm font-medium text-red-600 dark:text-red-400 hover:underline">
+                            <CloseIcon className="w-4 h-4" />
+                            Remove file
+                        </button>
+                    </div>
+                ) : (
+                    <label
+                        htmlFor="audio-upload"
+                        className="group cursor-pointer p-6 border-2 border-dashed border-slate-300 dark:border-slate-600 hover:border-sky-500 bg-slate-100/50 dark:bg-slate-800/50 hover:bg-slate-200/50 dark:hover:bg-slate-800 rounded-lg text-center transition-colors duration-300 flex flex-col items-center justify-center"
+                    >
+                        <UploadIcon className="w-10 h-10 text-slate-400 dark:text-slate-500 group-hover:text-sky-400 transition-colors mb-3" />
+                        <p className="text-slate-700 dark:text-slate-300 mb-1 font-semibold">
+                           <span className="text-sky-500 dark:text-sky-400">Click to upload</span> or drag and drop
+                        </p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">Upload audio sample (up to 5 mins)</p>
+                        <input
+                            type="file"
+                            id="audio-upload"
+                            className="hidden"
+                            accept=".mp3,.wav,.ogg"
+                            onChange={handleFileUpload}
+                        />
+                    </label>
+                )}
             </div>
+
+            {uploadedFile && (
+                <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-700 animate-fade-in">
+                    <h4 className="text-md font-semibold text-slate-800 dark:text-slate-200">Fine-Tune Cloned Voice (Demonstration)</h4>
+                    <FineTuneSlider 
+                        label="Timbre Similarity" 
+                        value={cloneSettings.timbre} 
+                        min={0} max={1} step={0.05} 
+                        onChange={v => setCloneSettings(s => ({...s, timbre: v}))} 
+                    />
+                    <FineTuneSlider 
+                        label="Accent Strength" 
+                        value={cloneSettings.accent} 
+                        min={0} max={1} step={0.05} 
+                        onChange={v => setCloneSettings(s => ({...s, accent: v}))} 
+                    />
+                    <FineTuneSlider 
+                        label="Estimated Age" 
+                        value={cloneSettings.age} 
+                        min={10} max={80} step={1} 
+                        onChange={v => setCloneSettings(s => ({...s, age: v}))} 
+                    />
+                </div>
+            )}
         </div>
     );
 };

@@ -24,10 +24,12 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({ profile, addLog, gen
     const [audioBuffer, setAudioBuffer] = useState<AudioBuffer | null>(null);
     const [exportFormat, setExportFormat] = useState<ExportFormat>('wav');
     const [isLogOpen, setIsLogOpen] = useState(false);
+    const [isFormatMenuOpen, setIsFormatMenuOpen] = useState(false);
     
     const audioContextRef = useRef<AudioContext | null>(null);
     const audioSourceRef = useRef<AudioBufferSourceNode | null>(null);
     const logContainerRef = useRef<HTMLDivElement>(null);
+    const formatMenuRef = useRef<HTMLDivElement>(null);
 
 
     useEffect(() => {
@@ -51,6 +53,16 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({ profile, addLog, gen
             logContainerRef.current.scrollTop = 0;
         }
     }, [generationLog]);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (formatMenuRef.current && !formatMenuRef.current.contains(event.target as Node)) {
+                setIsFormatMenuOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     const handleGenerate = async () => {
         if (!script.trim() || isGenerating) return;
@@ -190,20 +202,27 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({ profile, addLog, gen
                 <div className="flex-grow w-full sm:w-auto"></div>
                 {audioBuffer && !isGenerating && (
                      <div className="flex items-center gap-2">
-                        <div className="flex items-center rounded-lg bg-slate-200 dark:bg-slate-700/50 p-1">
-                            {(['wav', 'mp3', 'ogg'] as const).map(format => (
-                                <button
-                                    key={format}
-                                    onClick={() => setExportFormat(format)}
-                                    className={`px-3 py-1 text-sm font-semibold rounded-md transition-colors duration-200 ${
-                                        exportFormat === format 
-                                        ? 'bg-white dark:bg-slate-900 text-sky-500 dark:text-sky-300' 
-                                        : 'text-slate-600 dark:text-slate-300 hover:bg-slate-300/50 dark:hover:bg-slate-600/50'
-                                    }`}
-                                >
-                                    {format.toUpperCase()}
-                                </button>
-                            ))}
+                        <div className="relative" ref={formatMenuRef}>
+                            <button
+                                onClick={() => setIsFormatMenuOpen(prev => !prev)}
+                                className="flex items-center justify-between w-32 px-3 py-2 text-sm font-semibold rounded-lg bg-slate-200 dark:bg-slate-700/50 hover:bg-slate-300/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors"
+                            >
+                                <span>{exportFormat.toUpperCase()}</span>
+                                <ChevronDownIcon className={`w-4 h-4 transition-transform ${isFormatMenuOpen ? 'rotate-180' : ''}`} />
+                            </button>
+                            {isFormatMenuOpen && (
+                                <div className="absolute bottom-full mb-2 w-full bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 py-1 z-10 animate-fade-in">
+                                    {(['wav', 'mp3', 'ogg'] as const).map(format => (
+                                        <button
+                                            key={format}
+                                            onClick={() => { setExportFormat(format); setIsFormatMenuOpen(false); }}
+                                            className="w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700/50"
+                                        >
+                                            {format.toUpperCase()}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                         <button
                             onClick={handleDownload}
