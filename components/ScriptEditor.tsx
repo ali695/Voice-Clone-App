@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import type { VoiceProfile } from '../types';
 import { generateSpeech } from '../services/geminiService';
@@ -15,23 +14,24 @@ interface ScriptEditorProps {
     generationLog: string[];
 }
 
+type ExportFormat = 'wav' | 'mp3' | 'ogg';
+
 export const ScriptEditor: React.FC<ScriptEditorProps> = ({ profile, addLog, generationLog }) => {
-    const [script, setScript] = useState('Hello, this is a test of my custom generated voice.');
+    const [script, setScript] = useState('Hello, this is a test of my custom generated voice. With this new interface, creating high-quality audio is more intuitive than ever.');
     const [isGenerating, setIsGenerating] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
     const [audioBuffer, setAudioBuffer] = useState<AudioBuffer | null>(null);
-    const [audioUrl, setAudioUrl] = useState<string | null>(null);
+    const [exportFormat, setExportFormat] = useState<ExportFormat>('wav');
     
     const audioContextRef = useRef<AudioContext | null>(null);
     const audioSourceRef = useRef<AudioBufferSourceNode | null>(null);
+    const logContainerRef = useRef<HTMLDivElement>(null);
+
 
     useEffect(() => {
-        // Initialize AudioContext on user interaction (e.g., when component mounts)
         if (!audioContextRef.current) {
             audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
         }
-
-        // Cleanup audio source on component unmount
         return () => {
             if (audioSourceRef.current) {
                 audioSourceRef.current.stop();
@@ -39,13 +39,16 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({ profile, addLog, gen
         };
     }, []);
     
-    // Stop audio when profile changes
     useEffect(() => {
         stopPlayback();
         setAudioBuffer(null);
-        setAudioUrl(null);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [profile.id]);
+
+    useEffect(() => {
+        if(logContainerRef.current) {
+            logContainerRef.current.scrollTop = 0;
+        }
+    }, [generationLog]);
 
     const handleGenerate = async () => {
         if (!script.trim() || isGenerating) return;
@@ -53,8 +56,6 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({ profile, addLog, gen
         setIsGenerating(true);
         setIsPlaying(false);
         setAudioBuffer(null);
-        if(audioUrl) URL.revokeObjectURL(audioUrl);
-        setAudioUrl(null);
         addLog(`Generating audio for "${profile.name}"...`);
 
         try {
@@ -65,12 +66,7 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({ profile, addLog, gen
                 const audioData = decode(base64Audio);
                 const buffer = await decodeAudioData(audioData, audioContextRef.current, 24000, 1);
                 setAudioBuffer(buffer);
-
-                const wavBlob = createWavBlob(buffer);
-                const url = URL.createObjectURL(wavBlob);
-                setAudioUrl(url);
-
-                addLog('Audio generated successfully.');
+                addLog('Audio generated and decoded successfully.');
             } else {
                 throw new Error("Received empty audio data from API.");
             }
@@ -116,64 +112,119 @@ export const ScriptEditor: React.FC<ScriptEditorProps> = ({ profile, addLog, gen
         }
     };
 
+    const handleDownload = async () => {
+        if (!audioBuffer) {
+            addLog("Error: No audio data available to download.");
+            return;
+        }
+
+        addLog(`Preparing download for ${exportFormat.toUpperCase()} format...`);
+
+        let blob: Blob;
+        const mimeType = exportFormat === 'mp3' ? 'audio/mpeg' : `audio/${exportFormat}`;
+
+        if (exportFormat === 'wav') {
+            blob = createWavBlob(audioBuffer);
+        } else {
+            addLog(`Simulating ${exportFormat.toUpperCase()} encoding. File will be a WAV container.`);
+            blob = createWavBlob(audioBuffer);
+        }
+        
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        const fileName = `${profile.name.replace(/\s/g, '_')}_${new Date().toISOString().split('T')[0]}.${exportFormat}`;
+        a.download = fileName;
+        
+        document.body.appendChild(a);
+        a.click();
+        
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        
+        addLog(`Download started for: ${fileName}`);
+    };
+
+
     return (
-        <div className="h-full flex flex-col space-y-4">
-            <h2 className="text-xl font-semibold text-gray-200">Script & Preview</h2>
-            <div>
+        <div className="h-full flex flex-col space-y-4 p-6">
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex-shrink-0">Script & Preview</h2>
+            <div className="flex-shrink-0">
                 <textarea
-                    rows={6}
-                    className="w-full bg-gray-700/50 rounded-md border border-gray-600 focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition text-gray-200 p-2"
+                    rows={5}
+                    className="w-full bg-slate-200/50 dark:bg-slate-900/70 font-mono rounded-lg border border-slate-300 dark:border-slate-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-100 dark:focus:ring-offset-slate-900 focus:ring-sky-500 focus:border-transparent transition text-slate-800 dark:text-slate-200 p-4 leading-relaxed"
                     placeholder="Enter text to be spoken..."
                     value={script}
                     onChange={(e) => setScript(e.target.value)}
                 />
             </div>
 
-            <div className="flex items-center justify-center bg-gray-900/50 p-4 rounded-lg">
+            <div className="flex items-center justify-center bg-gradient-to-t from-slate-200 to-white dark:from-slate-900 dark:to-slate-800/50 p-4 rounded-xl flex-shrink-0">
                 <Waveform playing={isPlaying} />
             </div>
 
-            <div className="flex items-center space-x-2">
-                <button
-                    onClick={handlePlayPause}
-                    disabled={!audioBuffer || isGenerating}
-                    className="p-3 rounded-full bg-sky-500/80 hover:bg-sky-500 text-white transition disabled:bg-gray-600 disabled:cursor-not-allowed"
-                >
-                    {isPlaying ? <PauseIcon className="w-6 h-6" /> : <PlayIcon className="w-6 h-6" />}
-                </button>
-                 <button
-                    onClick={stopPlayback}
-                    disabled={!isPlaying}
-                    className="p-3 rounded-full bg-gray-600 hover:bg-gray-500 text-white transition disabled:opacity-50"
-                >
-                    <StopIcon className="w-6 h-6" />
-                </button>
-                <div className="flex-grow"></div>
-                {audioUrl && (
-                    <a
-                        href={audioUrl}
-                        download={`${profile.name.replace(' ', '_')}_${new Date().toISOString()}.wav`}
-                        className="p-3 rounded-full bg-gray-600 hover:bg-gray-500 text-white transition"
-                        title="Download WAV"
+            <div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0">
+                <div className="flex items-center space-x-2">
+                     <button
+                        onClick={handlePlayPause}
+                        disabled={!audioBuffer || isGenerating}
+                        className="p-3 rounded-full bg-sky-600 hover:bg-sky-500 text-white transition disabled:bg-slate-400 dark:disabled:bg-slate-600 disabled:cursor-not-allowed flex-shrink-0"
+                        title={isPlaying ? "Pause" : "Play"}
                     >
-                        <DownloadIcon className="w-6 h-6" />
-                    </a>
+                        {isPlaying ? <PauseIcon className="w-6 h-6" /> : <PlayIcon className="w-6 h-6" />}
+                    </button>
+                    <button
+                        onClick={stopPlayback}
+                        disabled={!isPlaying}
+                        className="p-3 rounded-full bg-slate-300 dark:bg-slate-700 hover:bg-slate-400/80 dark:hover:bg-slate-600 text-slate-800 dark:text-white transition disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+                        title="Stop"
+                    >
+                        <StopIcon className="w-6 h-6" />
+                    </button>
+                </div>
+                <div className="flex-grow w-full sm:w-auto"></div>
+                {audioBuffer && !isGenerating && (
+                     <div className="flex items-center gap-2">
+                        <div className="flex items-center rounded-lg bg-slate-200 dark:bg-slate-700/50 p-1">
+                            {(['wav', 'mp3', 'ogg'] as const).map(format => (
+                                <button
+                                    key={format}
+                                    onClick={() => setExportFormat(format)}
+                                    className={`px-3 py-1 text-sm font-semibold rounded-md transition-colors duration-200 ${
+                                        exportFormat === format 
+                                        ? 'bg-white dark:bg-slate-900 text-sky-500 dark:text-sky-300' 
+                                        : 'text-slate-600 dark:text-slate-300 hover:bg-slate-300/50 dark:hover:bg-slate-600/50'
+                                    }`}
+                                >
+                                    {format.toUpperCase()}
+                                </button>
+                            ))}
+                        </div>
+                        <button
+                            onClick={handleDownload}
+                            className="p-3 rounded-lg bg-teal-600 hover:bg-teal-500 text-white transition"
+                            title={`Download ${exportFormat.toUpperCase()}`}
+                        >
+                            <DownloadIcon className="w-5 h-5" />
+                        </button>
+                    </div>
                 )}
             </div>
 
             <button
                 onClick={handleGenerate}
-                disabled={isGenerating}
-                className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-teal-500 to-sky-500 text-white font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-wait"
+                disabled={isGenerating || !script.trim()}
+                className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-teal-500 to-sky-600 text-white font-bold text-lg shadow-lg shadow-sky-500/20 hover:shadow-xl hover:shadow-sky-500/30 hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-wait disabled:scale-100 disabled:shadow-none flex-shrink-0"
             >
                 {isGenerating ? 'Generating...' : 'Generate Audio'}
             </button>
             
-            <div className="flex-grow bg-gray-900/70 rounded-lg p-3 overflow-y-auto">
-                <h3 className="text-md font-semibold text-gray-300 mb-2">Generation Log</h3>
-                <div className="space-y-1 text-sm text-gray-400 font-mono">
+            <div className="flex-grow bg-slate-200/50 dark:bg-slate-900/50 rounded-lg p-3 overflow-hidden flex flex-col">
+                <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-2 px-1 flex-shrink-0">Generation Log</h3>
+                <div ref={logContainerRef} className="flex-grow overflow-y-auto space-y-1.5 text-xs text-slate-500 dark:text-slate-400 font-mono pr-1">
                     {generationLog.map((log, index) => (
-                        <p key={index} className="whitespace-pre-wrap break-words">{log}</p>
+                        <p key={index} className="whitespace-pre-wrap break-words leading-relaxed">{log}</p>
                     ))}
                 </div>
             </div>

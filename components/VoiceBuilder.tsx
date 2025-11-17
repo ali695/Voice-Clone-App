@@ -1,4 +1,3 @@
-
 import React, { useCallback } from 'react';
 import type { VoiceProfile, Vibe } from '../types';
 
@@ -12,6 +11,14 @@ const VIBES: Vibe[] = [
     'Dramatic', 'Friendly', 'Sincere', 'Pirate', 'Smooth Jazz DJ', 'Whispering', 
     'Emotional', 'Documentary', 'Motivational', 'Villain', 'News Anchor', 'Calm Therapist', 'Soft ASMR'
 ];
+
+const UploadIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5V9.75m0 0l3.75 3.75M12 9.75L8.25 13.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 17.25v2.25c0 1.518 1.232 2.75 2.75 2.75h13.5A2.75 2.75 0 0021 19.5V17.25" />
+    </svg>
+);
+
 
 export const VoiceBuilder: React.FC<VoiceBuilderProps> = ({ profile, onUpdate, addLog }) => {
     
@@ -27,25 +34,23 @@ export const VoiceBuilder: React.FC<VoiceBuilderProps> = ({ profile, onUpdate, a
     const handleFileUpload = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
-            if (file.size / 1024 / 1024 > 5) {
-                addLog('Error: File size should not exceed 5MB.');
+            if (file.size / 1024 / 1024 > 10) { // Increased limit
+                addLog('Error: File size should not exceed 10MB.');
                 return;
             }
             addLog(`Uploaded ${file.name} for voice cloning. (Feature is a demonstration)`);
-            // In a real app, you would process this file.
-            // For now, we'll just log it. This feature is for UI demonstration.
         }
     }, [addLog]);
 
     return (
-        <div className="space-y-4">
+        <div className="space-y-6">
             <div>
-                <h2 className="text-xl font-semibold mb-2 text-gray-200">Voice Builder</h2>
-                <label htmlFor="voice-description" className="block text-sm font-medium text-gray-400 mb-1">Describe the voice you want to create:</label>
+                <h2 className="text-lg font-bold mb-3 text-slate-900 dark:text-slate-100">Voice Builder</h2>
+                <label htmlFor="voice-description" className="block text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">Describe the voice you want to create:</label>
                 <textarea
                     id="voice-description"
                     rows={3}
-                    className="w-full bg-gray-700/50 rounded-md border border-gray-600 focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition text-gray-200 p-2"
+                    className="w-full bg-slate-100 dark:bg-slate-700/50 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-100 dark:focus:ring-offset-slate-900 focus:ring-sky-500 focus:border-transparent transition text-slate-800 dark:text-slate-200 p-3"
                     placeholder="e.g., A deep, calm male monk for meditation guides"
                     value={profile.description}
                     onChange={handleDescriptionChange}
@@ -53,13 +58,17 @@ export const VoiceBuilder: React.FC<VoiceBuilderProps> = ({ profile, onUpdate, a
             </div>
 
             <div>
-                <h3 className="text-lg font-medium text-gray-300 mb-2">Voice Personality & Vibe</h3>
+                <h3 className="text-md font-semibold text-slate-800 dark:text-slate-200 mb-3">Personality & Vibe</h3>
                 <div className="flex flex-wrap gap-2">
                     {VIBES.map(vibe => (
                         <button
                             key={vibe}
                             onClick={() => handleVibeClick(vibe)}
-                            className={`px-3 py-1 text-sm rounded-full transition-all ${profile.vibe === vibe ? 'bg-sky-500 text-white font-semibold' : 'bg-gray-700 hover:bg-gray-600 text-gray-300'}`}
+                            className={`px-3 py-1.5 text-sm rounded-full transition-all duration-200 border ${
+                                profile.vibe === vibe 
+                                ? 'bg-gradient-to-r from-teal-400 to-sky-500 border-transparent text-white font-semibold shadow-md shadow-sky-500/10' 
+                                : 'bg-slate-200 dark:bg-slate-700/50 border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500 hover:bg-slate-300/50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300'
+                            }`}
                         >
                             {vibe}
                         </button>
@@ -68,24 +77,25 @@ export const VoiceBuilder: React.FC<VoiceBuilderProps> = ({ profile, onUpdate, a
             </div>
 
             <div>
-                <h3 className="text-lg font-medium text-gray-300 mb-2">Voice-to-Voice Cloning</h3>
-                <div className="p-4 border-2 border-dashed border-gray-600 rounded-lg text-center">
-                    <p className="text-gray-400 mb-2">Upload a 5-60 second audio sample (.mp3, .wav)</p>
-                     <input
+                <h3 className="text-md font-semibold text-slate-800 dark:text-slate-200 mb-3">Voice-to-Voice Cloning</h3>
+                 <label
+                    htmlFor="audio-upload"
+                    className="group cursor-pointer p-6 border-2 border-dashed border-slate-300 dark:border-slate-600 hover:border-sky-500 bg-slate-100/50 dark:bg-slate-800/50 hover:bg-slate-200/50 dark:hover:bg-slate-800 rounded-lg text-center transition-colors duration-300 flex flex-col items-center justify-center"
+                 >
+                    <UploadIcon className="w-10 h-10 text-slate-400 dark:text-slate-500 group-hover:text-sky-400 transition-colors mb-3" />
+                    <p className="text-slate-700 dark:text-slate-300 mb-1 font-semibold">
+                       <span className="text-sky-500 dark:text-sky-400">Click to upload</span> or drag and drop
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Upload a 5-60 second audio sample (.mp3, .wav)</p>
+                    <input
                         type="file"
                         id="audio-upload"
                         className="hidden"
                         accept=".mp3,.wav,.ogg"
                         onChange={handleFileUpload}
                     />
-                    <label
-                        htmlFor="audio-upload"
-                        className="cursor-pointer inline-block bg-teal-500/80 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded transition"
-                    >
-                        Upload Audio
-                    </label>
-                    <p className="text-xs text-gray-500 mt-2">Note: This is a UI demonstration. Voice cloning requires a dedicated backend.</p>
-                </div>
+                </label>
+                <p className="text-xs text-slate-500 dark:text-slate-500 mt-2 text-center">Note: This is a UI demonstration. Voice cloning requires a dedicated backend.</p>
             </div>
         </div>
     );

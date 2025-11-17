@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { VoiceSettings as VoiceSettingsType } from '../types';
 
@@ -9,9 +8,9 @@ interface VoiceSettingsProps {
 
 const Slider: React.FC<{ label: string; value: number; min: number; max: number; step: number; onChange: (value: number) => void }> = ({ label, value, min, max, step, onChange }) => (
     <div>
-        <label className="block text-sm font-medium text-gray-400 flex justify-between">
+        <label className="block text-sm font-medium text-slate-600 dark:text-slate-300 mb-2 flex justify-between">
             <span>{label}</span>
-            <span>{value.toFixed(2)}</span>
+            <span className="font-mono text-slate-500 dark:text-slate-400">{value.toFixed(2)}</span>
         </label>
         <input
             type="range"
@@ -20,7 +19,7 @@ const Slider: React.FC<{ label: string; value: number; min: number; max: number;
             step={step}
             value={value}
             onChange={(e) => onChange(parseFloat(e.target.value))}
-            className="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-sky-400"
+            className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full appearance-none cursor-pointer accent-sky-500 dark:accent-sky-400"
         />
     </div>
 );
@@ -28,15 +27,15 @@ const Slider: React.FC<{ label: string; value: number; min: number; max: number;
 export const VoiceSettings: React.FC<VoiceSettingsProps> = ({ settings, onUpdate }) => {
     return (
         <div>
-            <h2 className="text-xl font-semibold mb-4 text-gray-200">Voice Settings</h2>
+            <h2 className="text-lg font-bold mb-4 text-slate-900 dark:text-slate-100">Voice Settings</h2>
             <div className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-sm font-medium text-gray-400">Language</label>
+                        <label className="block text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">Language</label>
                         <select 
                             value={settings.language} 
                             onChange={(e) => onUpdate({ language: e.target.value as VoiceSettingsType['language'] })}
-                            className="w-full mt-1 bg-gray-700/50 rounded-md border border-gray-600 focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition text-gray-200 p-2"
+                            className="w-full bg-slate-100 dark:bg-slate-700/50 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-100 dark:focus:ring-offset-slate-900 focus:ring-sky-500 focus:border-transparent transition text-slate-800 dark:text-slate-200 p-2.5"
                         >
                             <option>EN</option>
                             <option>UR</option>
@@ -47,13 +46,13 @@ export const VoiceSettings: React.FC<VoiceSettingsProps> = ({ settings, onUpdate
                         </select>
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-400">Accent (Informational)</label>
+                        <label className="block text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">Accent (Informational)</label>
                         <input 
                             type="text"
                             value={settings.accent}
                             onChange={(e) => onUpdate({ accent: e.target.value })}
                             placeholder="e.g., British, Australian"
-                            className="w-full mt-1 bg-gray-700/50 rounded-md border border-gray-600 focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition text-gray-200 p-2"
+                            className="w-full bg-slate-100 dark:bg-slate-700/50 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-100 dark:focus:ring-offset-slate-900 focus:ring-sky-500 focus:border-transparent transition text-slate-800 dark:text-slate-200 p-2.5"
                         />
                     </div>
                 </div>
