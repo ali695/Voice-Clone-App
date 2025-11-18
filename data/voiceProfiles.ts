@@ -6,7 +6,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Documentary Narrator',
     description: 'A clear, deep male voice with a calm and authoritative tone.',
     category: 'Narration',
-    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.2, stability: 0.8, accent: 'American' },
+    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.2, stability: 0.8, accent: 'Deep Documentary' },
     vibe: 'Documentary',
   },
   {
@@ -14,7 +14,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'ASMR Whisper',
     description: 'A soft, gentle female voice with close-mic ASMR breathing.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.8, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.9, stability: 0.9, accent: 'Neutral' },
+    settings: { language: 'EN', speed: 0.8, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.9, stability: 0.9, accent: 'Whisper Accent' },
     vibe: 'Soft ASMR',
   },
   {
@@ -22,7 +22,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Energetic YouTuber',
     description: 'A bright, upbeat young male voice, full of energy.',
     category: 'Social Media',
-    settings: { language: 'EN', speed: 1.2, pitch: 1.1, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.2, pitch: 1.1, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Motivational',
   },
   {
@@ -30,7 +30,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Wise Old Wizard',
     description: 'An old, slightly shaky male voice with a gentle, knowing tone.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 0.9, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.6, breathingLevel: 0.4, stability: 0.6, accent: 'British' },
+    settings: { language: 'EN', speed: 0.9, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.6, breathingLevel: 0.4, stability: 0.6, accent: 'British Warm' },
     vibe: 'Dramatic',
   },
   {
@@ -38,7 +38,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Sassy AI Assistant',
     description: 'A crisp, feminine robotic voice with a hint of personality.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.1, pitch: 1.2, temperature: 0.5, emotionalDepth: 0.3, clarity: 1.0, breathingLevel: 0.0, stability: 1.0, accent: 'Robotic' },
+    settings: { language: 'EN', speed: 1.1, pitch: 1.2, temperature: 0.5, emotionalDepth: 0.3, clarity: 1.0, breathingLevel: 0.0, stability: 1.0, accent: 'Neutral EN' },
     vibe: 'Sincere',
   },
   {
@@ -46,7 +46,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Pirate Captain',
     description: 'A gruff, hearty male voice with a classic pirate accent, arrr!',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.8, temperature: 0.9, emotionalDepth: 0.7, clarity: 0.7, breathingLevel: 0.5, stability: 0.6, accent: 'Pirate' },
+    settings: { language: 'EN', speed: 1.0, pitch: 0.8, temperature: 0.9, emotionalDepth: 0.7, clarity: 0.7, breathingLevel: 0.5, stability: 0.6, accent: 'British Warm' },
     vibe: 'Pirate',
   },
   {
@@ -54,7 +54,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Smooth Jazz DJ',
     description: 'A deep, velvety male voice, slow and relaxed, for late-night radio.',
     category: 'Narration',
-    settings: { language: 'EN', speed: 0.85, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.3, stability: 0.9, accent: 'American' },
+    settings: { language: 'EN', speed: 0.85, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.3, stability: 0.9, accent: 'American Reels Style' },
     vibe: 'Smooth Jazz DJ',
   },
   {
@@ -62,7 +62,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Professional News Anchor',
     description: 'A professional, clear female voice delivering news with clarity.',
     category: 'Narration',
-    settings: { language: 'EN', speed: 1.1, pitch: 1.05, temperature: 0.3, emotionalDepth: 0.2, clarity: 0.95, breathingLevel: 0.1, stability: 0.95, accent: 'American' },
+    settings: { language: 'EN', speed: 1.1, pitch: 1.05, temperature: 0.3, emotionalDepth: 0.2, clarity: 0.95, breathingLevel: 0.1, stability: 0.95, accent: 'Neutral EN' },
     vibe: 'News Anchor',
   },
   {
@@ -70,7 +70,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Calm Therapist',
     description: 'A soothing, empathetic female voice, calm and reassuring.',
     category: 'Relaxation',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.0, temperature: 0.5, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.3, stability: 0.9, accent: 'Neutral' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.0, temperature: 0.5, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.3, stability: 0.9, accent: 'Gentle Therapist' },
     vibe: 'Calm Therapist',
   },
   {
@@ -78,7 +78,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Anime Villain',
     description: 'A dramatic, deep male voice with a sinister edge.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.85, temperature: 0.8, emotionalDepth: 0.9, clarity: 0.8, breathingLevel: 0.4, stability: 0.7, accent: 'Japanese-esque' },
+    settings: { language: 'EN', speed: 1.0, pitch: 0.85, temperature: 0.8, emotionalDepth: 0.9, clarity: 0.8, breathingLevel: 0.4, stability: 0.7, accent: 'Neutral EN' },
     vibe: 'Villain',
   },
   {
@@ -86,7 +86,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'German Engineer',
     description: 'A precise, male voice with a distinct German accent.',
     category: 'Accents',
-    settings: { language: 'DE', speed: 1.0, pitch: 1.0, temperature: 0.4, emotionalDepth: 0.2, clarity: 0.9, breathingLevel: 0.1, stability: 0.9, accent: 'German' },
+    settings: { language: 'DE', speed: 1.0, pitch: 1.0, temperature: 0.4, emotionalDepth: 0.2, clarity: 0.9, breathingLevel: 0.1, stability: 0.9, accent: 'German Soft' },
     vibe: 'Sincere',
   },
   {
@@ -94,7 +94,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'French Storyteller',
     description: 'A soft, melodic female voice with a charming French accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 0.95, pitch: 1.1, temperature: 0.6, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.3, stability: 0.8, accent: 'French' },
+    settings: { language: 'EN', speed: 0.95, pitch: 1.1, temperature: 0.6, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.3, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -102,7 +102,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Kid Cartoon Character',
     description: 'A high-pitched, energetic kid\'s voice, full of wonder.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.3, pitch: 1.4, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.2, stability: 0.6, accent: 'Animated' },
+    settings: { language: 'EN', speed: 1.3, pitch: 1.4, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.2, stability: 0.6, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -110,7 +110,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Teenage Vlogger',
     description: 'A casual, friendly female voice with modern slang.',
     category: 'Social Media',
-    settings: { language: 'EN', speed: 1.15, pitch: 1.15, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.2, stability: 0.75, accent: 'American' },
+    settings: { language: 'EN', speed: 1.15, pitch: 1.15, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.2, stability: 0.75, accent: 'American Reels Style' },
     vibe: 'Friendly',
   },
   {
@@ -118,7 +118,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Himalayan Monk',
     description: 'A very deep, calm male voice with long pauses.',
     category: 'Relaxation',
-    settings: { language: 'EN', speed: 0.75, pitch: 0.8, temperature: 0.3, emotionalDepth: 0.5, clarity: 0.9, breathingLevel: 0.5, stability: 0.9, accent: 'Tibetan' },
+    settings: { language: 'EN', speed: 0.75, pitch: 0.8, temperature: 0.3, emotionalDepth: 0.5, clarity: 0.9, breathingLevel: 0.5, stability: 0.9, accent: 'Gentle Therapist' },
     vibe: 'Calm Therapist',
   },
   {
@@ -126,7 +126,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Urdu Poet',
     description: 'An emotional, resonant male voice speaking in Urdu.',
     category: 'Languages',
-    settings: { language: 'UR', speed: 0.9, pitch: 0.95, temperature: 0.7, emotionalDepth: 0.9, clarity: 0.8, breathingLevel: 0.3, stability: 0.8, accent: 'Urdu' },
+    settings: { language: 'UR', speed: 0.9, pitch: 0.95, temperature: 0.7, emotionalDepth: 0.9, clarity: 0.8, breathingLevel: 0.3, stability: 0.8, accent: 'Urdu Emotional' },
     vibe: 'Emotional',
   },
   {
@@ -134,7 +134,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Arabic News Reporter',
     description: 'A formal, clear male voice with an Arabic accent.',
     category: 'Languages',
-    settings: { language: 'AR', speed: 1.05, pitch: 1.0, temperature: 0.2, emotionalDepth: 0.1, clarity: 0.95, breathingLevel: 0.1, stability: 0.9, accent: 'Arabic' },
+    settings: { language: 'AR', speed: 1.05, pitch: 1.0, temperature: 0.2, emotionalDepth: 0.1, clarity: 0.95, breathingLevel: 0.1, stability: 0.9, accent: 'Arabic Velvet' },
     vibe: 'News Anchor',
   },
   {
@@ -142,7 +142,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Hindi Movie Star',
     description: 'A charismatic, confident female voice in Hindi.',
     category: 'Languages',
-    settings: { language: 'HI', speed: 1.1, pitch: 1.1, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.2, stability: 0.8, accent: 'Hindi' },
+    settings: { language: 'HI', speed: 1.1, pitch: 1.1, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.2, stability: 0.8, accent: 'Indian Cinematic' },
     vibe: 'Dramatic',
   },
   {
@@ -150,7 +150,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Turkish Chef',
     description: 'A warm, inviting male voice with a Turkish accent.',
     category: 'Languages',
-    settings: { language: 'TR', speed: 1.0, pitch: 0.95, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.8, accent: 'Turkish' },
+    settings: { language: 'TR', speed: 1.0, pitch: 0.95, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.8, accent: 'Turkish Soft Emotional' },
     vibe: 'Friendly',
   },
   {
@@ -158,7 +158,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Royal British Queen',
     description: 'An elderly female voice with a posh, RP British accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.05, temperature: 0.4, emotionalDepth: 0.4, clarity: 0.9, breathingLevel: 0.2, stability: 0.85, accent: 'British (RP)' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.05, temperature: 0.4, emotionalDepth: 0.4, clarity: 0.9, breathingLevel: 0.2, stability: 0.85, accent: 'British Warm' },
     vibe: 'Sincere',
   },
   {
@@ -166,7 +166,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Australian Outback Guide',
     description: 'A friendly, laid-back male voice with a strong Aussie accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'Australian' },
+    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -174,7 +174,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Irish Bard',
     description: 'A lyrical, male voice with a gentle Irish brogue.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 0.95, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.4, stability: 0.8, accent: 'Irish' },
+    settings: { language: 'EN', speed: 0.95, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.4, stability: 0.8, accent: 'British Warm' },
     vibe: 'Dramatic',
   },
   {
@@ -182,7 +182,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Fast-Talking Auctioneer',
     description: 'An incredibly fast, rhythmic male voice.',
     category: 'Narration',
-    settings: { language: 'EN', speed: 1.9, pitch: 1.1, temperature: 0.7, emotionalDepth: 0.4, clarity: 0.9, breathingLevel: 0.1, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.9, pitch: 1.1, temperature: 0.7, emotionalDepth: 0.4, clarity: 0.9, breathingLevel: 0.1, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Motivational',
   },
   {
@@ -190,23 +190,23 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Gamer Friend',
     description: 'A casual, excitable female voice for game streaming.',
     category: 'Social Media',
-    settings: { language: 'EN', speed: 1.2, pitch: 1.15, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.2, pitch: 1.15, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Friendly',
   },
   {
     id: 'vp_25',
     name: 'Spooky Ghost Storyteller',
     description: 'A low, whispering male voice for horror stories.',
-    category: 'Narration',
-    settings: { language: 'EN', speed: 0.8, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.7, breathingLevel: 0.6, stability: 0.8, accent: 'Neutral' },
-    vibe: 'Whispering',
+    category: 'Storytelling',
+    settings: { language: 'EN', speed: 0.8, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.7, breathingLevel: 0.6, stability: 0.8, accent: 'Whisper Accent' },
+    vibe: 'Horror Narrator',
   },
   {
     id: 'vp_26',
     name: 'Corporate Trainer',
     description: 'A clear, confident female voice for e-learning.',
     category: 'Narration',
-    settings: { language: 'EN', speed: 1.1, pitch: 1.05, temperature: 0.4, emotionalDepth: 0.3, clarity: 0.9, breathingLevel: 0.1, stability: 0.9, accent: 'American' },
+    settings: { language: 'EN', speed: 1.1, pitch: 1.05, temperature: 0.4, emotionalDepth: 0.3, clarity: 0.9, breathingLevel: 0.1, stability: 0.9, accent: 'Neutral EN' },
     vibe: 'Motivational',
   },
   {
@@ -214,7 +214,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Old-Time Radio Host',
     description: 'A male voice with a slight vintage radio effect.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.5, emotionalDepth: 0.4, clarity: 0.8, breathingLevel: 0.2, stability: 0.8, accent: 'Mid-Atlantic' },
+    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.5, emotionalDepth: 0.4, clarity: 0.8, breathingLevel: 0.2, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Sincere',
   },
   {
@@ -222,7 +222,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Valley Girl',
     description: 'A young female voice with a Californian accent and uptalk.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.1, pitch: 1.2, temperature: 0.7, emotionalDepth: 0.5, clarity: 0.8, breathingLevel: 0.2, stability: 0.7, accent: 'Californian' },
+    settings: { language: 'EN', speed: 1.1, pitch: 1.2, temperature: 0.7, emotionalDepth: 0.5, clarity: 0.8, breathingLevel: 0.2, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Friendly',
   },
   {
@@ -230,7 +230,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Drill Sergeant',
     description: 'A loud, commanding male voice, barking orders.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.3, pitch: 0.9, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.4, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.3, pitch: 0.9, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.4, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Villain',
   },
   {
@@ -238,7 +238,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Gentle Whisper',
     description: 'A very soft, quiet female voice, almost a whisper.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.3, stability: 0.9, accent: 'Neutral' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.3, stability: 0.9, accent: 'Whisper Accent' },
     vibe: 'Whispering',
   },
   {
@@ -246,7 +246,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Indian Tech Support',
     description: 'A helpful, polite male voice with a clear Indian accent.',
     category: 'Accents',
-    settings: { language: 'HI', speed: 1.0, pitch: 1.0, temperature: 0.5, emotionalDepth: 0.4, clarity: 0.85, breathingLevel: 0.1, stability: 0.8, accent: 'Indian' },
+    settings: { language: 'HI', speed: 1.0, pitch: 1.0, temperature: 0.5, emotionalDepth: 0.4, clarity: 0.85, breathingLevel: 0.1, stability: 0.8, accent: 'Indian Cinematic' },
     vibe: 'Friendly',
   },
   {
@@ -254,7 +254,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Scottish Highlander',
     description: 'A strong, rolling male voice with a thick Scottish accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 0.95, pitch: 0.9, temperature: 0.7, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.4, stability: 0.7, accent: 'Scottish' },
+    settings: { language: 'EN', speed: 0.95, pitch: 0.9, temperature: 0.7, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.4, stability: 0.7, accent: 'British Warm' },
     vibe: 'Dramatic',
   },
   {
@@ -262,7 +262,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Robot Butler',
     description: 'A polite, male-toned robotic voice, perfectly articulated.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.1, emotionalDepth: 0.0, clarity: 1.0, breathingLevel: 0.0, stability: 1.0, accent: 'Robotic' },
+    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.1, emotionalDepth: 0.0, clarity: 1.0, breathingLevel: 0.0, stability: 1.0, accent: 'Neutral EN' },
     vibe: 'Sincere',
   },
   {
@@ -270,7 +270,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'SoCal Surfer Dude',
     description: 'A laid-back, male voice with a Californian surfer accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.0, pitch: 1.05, temperature: 0.8, emotionalDepth: 0.5, clarity: 0.8, breathingLevel: 0.2, stability: 0.7, accent: 'Californian' },
+    settings: { language: 'EN', speed: 1.0, pitch: 1.05, temperature: 0.8, emotionalDepth: 0.5, clarity: 0.8, breathingLevel: 0.2, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Friendly',
   },
   {
@@ -278,7 +278,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Russian Spy',
     description: 'A cold, calculating female voice with a heavy Russian accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.0, temperature: 0.4, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.1, stability: 0.9, accent: 'Russian' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.0, temperature: 0.4, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.1, stability: 0.9, accent: 'Neutral EN' },
     vibe: 'Villain',
   },
   {
@@ -286,7 +286,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Southern Belle',
     description: 'A sweet, charming female voice with a Southern American drawl.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.15, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.8, accent: 'Southern American' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.15, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.8, accent: 'American Reels Style' },
     vibe: 'Friendly',
   },
   {
@@ -294,7 +294,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Game Show Host',
     description: 'An overly enthusiastic, booming male voice.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.3, pitch: 1.1, temperature: 0.9, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.3, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.3, pitch: 1.1, temperature: 0.9, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.3, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Motivational',
   },
   {
@@ -302,7 +302,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Emotional Film Narrator',
     description: 'A raw, emotive male voice, cracking with feeling.',
     category: 'Narration',
-    settings: { language: 'EN', speed: 0.9, pitch: 0.95, temperature: 0.7, emotionalDepth: 1.0, clarity: 0.8, breathingLevel: 0.5, stability: 0.6, accent: 'American' },
+    settings: { language: 'EN', speed: 0.9, pitch: 0.95, temperature: 0.7, emotionalDepth: 1.0, clarity: 0.8, breathingLevel: 0.5, stability: 0.6, accent: 'American Reels Style' },
     vibe: 'Emotional',
   },
   {
@@ -310,7 +310,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Child Prodigy',
     description: 'A young girl\'s voice, speaking with high intelligence.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.1, pitch: 1.3, temperature: 0.5, emotionalDepth: 0.3, clarity: 0.9, breathingLevel: 0.1, stability: 0.8, accent: 'Neutral' },
+    settings: { language: 'EN', speed: 1.1, pitch: 1.3, temperature: 0.5, emotionalDepth: 0.3, clarity: 0.9, breathingLevel: 0.1, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Sincere',
   },
   {
@@ -318,7 +318,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Alien Commander',
     description: 'A digitally altered, deep voice with an otherworldly cadence.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.8, temperature: 0.3, emotionalDepth: 0.5, clarity: 0.9, breathingLevel: 0.0, stability: 0.9, accent: 'Alien' },
+    settings: { language: 'EN', speed: 1.0, pitch: 0.8, temperature: 0.3, emotionalDepth: 0.5, clarity: 0.9, breathingLevel: 0.0, stability: 0.9, accent: 'Neutral EN' },
     vibe: 'Villain',
   },
   {
@@ -326,7 +326,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Soccer Commentator',
     description: 'A frantic, fast-paced male voice with a Brazilian accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.5, pitch: 1.2, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.4, stability: 0.6, accent: 'Brazilian' },
+    settings: { language: 'EN', speed: 1.5, pitch: 1.2, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.4, stability: 0.6, accent: 'Neutral EN' },
     vibe: 'Dramatic',
   },
   {
@@ -334,7 +334,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Yoga Instructor',
     description: 'A serene, gentle female voice for guiding poses.',
     category: 'Relaxation',
-    settings: { language: 'EN', speed: 0.85, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.4, stability: 0.9, accent: 'Neutral' },
+    settings: { language: 'EN', speed: 0.85, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.4, stability: 0.9, accent: 'Gentle Therapist' },
     vibe: 'Calm Therapist',
   },
   {
@@ -342,7 +342,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Hard-boiled Detective',
     description: 'A gravelly, cynical male voice, narrating a noir mystery.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.5, clarity: 0.8, breathingLevel: 0.3, stability: 0.8, accent: 'American' },
+    settings: { language: 'EN', speed: 1.0, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.5, clarity: 0.8, breathingLevel: 0.3, stability: 0.8, accent: 'American Reels Style' },
     vibe: 'Dramatic',
   },
   {
@@ -350,7 +350,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Excitable Scientist',
     description: 'A quirky, fast-talking female voice, passionate about discovery.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.25, pitch: 1.15, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.85, breathingLevel: 0.2, stability: 0.7, accent: 'Neutral' },
+    settings: { language: 'EN', speed: 1.25, pitch: 1.15, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.85, breathingLevel: 0.2, stability: 0.7, accent: 'Neutral EN' },
     vibe: 'Motivational',
   },
   {
@@ -358,7 +358,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Fairy Godmother',
     description: 'A warm, magical elderly female voice, full of kindness.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.2, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.3, stability: 0.85, accent: 'British' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.2, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.3, stability: 0.85, accent: 'British Warm' },
     vibe: 'Friendly',
   },
   {
@@ -366,7 +366,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Viking Berserker',
     description: 'A deep, booming male voice with a Nordic accent, shouting a battle cry.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.85, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.7, breathingLevel: 0.6, stability: 0.6, accent: 'Nordic' },
+    settings: { language: 'EN', speed: 1.0, pitch: 0.85, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.7, breathingLevel: 0.6, stability: 0.6, accent: 'Neutral EN' },
     vibe: 'Villain',
   },
   {
@@ -374,7 +374,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'K-Pop Idol',
     description: 'A bright, cute female voice with a slight Korean accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.1, pitch: 1.25, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.2, stability: 0.8, accent: 'Korean' },
+    settings: { language: 'EN', speed: 1.1, pitch: 1.25, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.2, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -382,7 +382,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Sleep Story Narrator',
     description: 'A deep, male voice, speaking very slowly to help you fall asleep.',
     category: 'Relaxation',
-    settings: { language: 'EN', speed: 0.7, pitch: 0.9, temperature: 0.3, emotionalDepth: 0.5, clarity: 0.95, breathingLevel: 0.4, stability: 0.95, accent: 'British' },
+    settings: { language: 'EN', speed: 0.7, pitch: 0.9, temperature: 0.3, emotionalDepth: 0.5, clarity: 0.95, breathingLevel: 0.4, stability: 0.95, accent: 'Gentle Therapist' },
     vibe: 'Calm Therapist',
   },
   {
@@ -390,7 +390,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Canadian Friend',
     description: 'A super polite and friendly male voice with a subtle Canadian accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.7, emotionalDepth: 0.5, clarity: 0.85, breathingLevel: 0.2, stability: 0.8, accent: 'Canadian' },
+    settings: { language: 'EN', speed: 1.0, pitch: 1.0, temperature: 0.7, emotionalDepth: 0.5, clarity: 0.85, breathingLevel: 0.2, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -398,7 +398,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Regal Elf Queen',
     description: 'An ethereal, ageless female voice, speaking with grace and authority.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 0.95, pitch: 1.15, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.95, breathingLevel: 0.1, stability: 0.9, accent: 'Elvish' },
+    settings: { language: 'EN', speed: 0.95, pitch: 1.15, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.95, breathingLevel: 0.1, stability: 0.9, accent: 'British Warm' },
     vibe: 'Sincere',
   },
   {
@@ -406,7 +406,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Curious Boy Explorer',
     description: 'A young, energetic boy\'s voice, always asking questions and full of wonder.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.2, pitch: 1.35, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.2, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.2, pitch: 1.35, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.2, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Friendly',
   },
   {
@@ -414,7 +414,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Sarcastic Teen Girl',
     description: 'A casual, slightly bored female voice with witty and sarcastic undertones.',
     category: 'Social Media',
-    settings: { language: 'EN', speed: 1.1, pitch: 1.15, temperature: 0.6, emotionalDepth: 0.4, clarity: 0.8, breathingLevel: 0.2, stability: 0.75, accent: 'American' },
+    settings: { language: 'EN', speed: 1.1, pitch: 1.15, temperature: 0.6, emotionalDepth: 0.4, clarity: 0.8, breathingLevel: 0.2, stability: 0.75, accent: 'American Reels Style' },
     vibe: 'Sincere',
   },
   {
@@ -422,7 +422,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Gentle Big Sister',
     description: 'A warm, reassuring, and patient young female voice, perfect for storytelling.',
     category: 'Narration',
-    settings: { language: 'EN', speed: 0.95, pitch: 1.1, temperature: 0.5, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.3, stability: 0.85, accent: 'Neutral' },
+    settings: { language: 'EN', speed: 0.95, pitch: 1.1, temperature: 0.5, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.3, stability: 0.85, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -430,7 +430,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Rowdy Little Brother',
     description: 'A playful, high-energy, and slightly mischievous young boy\'s voice.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.3, pitch: 1.4, temperature: 0.9, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.6, accent: 'American' },
+    settings: { language: 'EN', speed: 1.3, pitch: 1.4, temperature: 0.9, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.6, accent: 'American Reels Style' },
     vibe: 'Friendly',
   },
   {
@@ -438,7 +438,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Upbeat Fitness Instructor',
     description: 'A bright, motivating, and clear young female voice to guide a workout.',
     category: 'Narration',
-    settings: { language: 'EN', speed: 1.2, pitch: 1.1, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.4, stability: 0.8, accent: 'American' },
+    settings: { language: 'EN', speed: 1.2, pitch: 1.1, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.4, stability: 0.8, accent: 'Viral Short-Form' },
     vibe: 'Motivational',
   },
   {
@@ -446,7 +446,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Sarcastic Teen Boy',
     description: 'A laid-back, male voice with dry humor and a nonchalant delivery.',
     category: 'Social Media',
-    settings: { language: 'EN', speed: 1.05, pitch: 1.0, temperature: 0.6, emotionalDepth: 0.4, clarity: 0.85, breathingLevel: 0.2, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.05, pitch: 1.0, temperature: 0.6, emotionalDepth: 0.4, clarity: 0.85, breathingLevel: 0.2, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Sincere',
   },
   {
@@ -454,7 +454,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Lo-fi Study Host (Female)',
     description: 'A calm, soft, and relaxing female voice, like a late-night chillhop radio host.',
     category: 'Relaxation',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.05, temperature: 0.3, emotionalDepth: 0.5, clarity: 0.9, breathingLevel: 0.4, stability: 0.9, accent: 'Neutral' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.05, temperature: 0.3, emotionalDepth: 0.5, clarity: 0.9, breathingLevel: 0.4, stability: 0.9, accent: 'Gentle Therapist' },
     vibe: 'Calm Therapist',
   },
   {
@@ -462,7 +462,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'E-sports Shoutcaster (Male)',
     description: 'A fast, excited, and dynamic male voice capturing the hype of a live match.',
     category: 'Social Media',
-    settings: { language: 'EN', speed: 1.6, pitch: 1.1, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.3, stability: 0.6, accent: 'American' },
+    settings: { language: 'EN', speed: 1.6, pitch: 1.1, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.3, stability: 0.6, accent: 'Viral Short-Form' },
     vibe: 'Dramatic',
   },
   {
@@ -470,7 +470,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Bubbly Anime Heroine',
     description: 'A high-pitched, cute, and energetic female voice with a Japanese-esque flair.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.2, pitch: 1.45, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.2, stability: 0.7, accent: 'Animated' },
+    settings: { language: 'EN', speed: 1.2, pitch: 1.45, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.2, stability: 0.7, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -478,7 +478,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Serious Young Detective',
     description: 'A focused, intelligent, and slightly lower-pitched young adult male voice.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.95, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.1, stability: 0.85, accent: 'British' },
+    settings: { language: 'EN', speed: 1.0, pitch: 0.95, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.1, stability: 0.85, accent: 'British Warm' },
     vibe: 'Sincere',
   },
   {
@@ -486,7 +486,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Cheerful Kid Gamer (Girl)',
     description: 'An excited, happy, and sometimes loud young girl\'s voice for game streaming.',
     category: 'Social Media',
-    settings: { language: 'EN', speed: 1.25, pitch: 1.3, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.25, pitch: 1.3, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Friendly',
   },
   {
@@ -494,7 +494,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Aspiring Rockstar (Male)',
     description: 'A slightly raspy, confident young adult male voice with a rock edge.',
     category: 'Characters',
-    settings: { language: 'EN', speed: 1.1, pitch: 1.0, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.75, breathingLevel: 0.4, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.1, pitch: 1.0, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.75, breathingLevel: 0.4, stability: 0.7, accent: 'American Reels Style' },
     vibe: 'Motivational',
   },
   {
@@ -502,7 +502,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Chilling Horror Narrator',
     description: 'A deep, slow male voice with unsettling pauses and a menacing whisper.',
     category: 'Storytelling',
-    settings: { language: 'EN', speed: 0.8, pitch: 0.85, temperature: 0.6, emotionalDepth: 0.9, clarity: 0.7, breathingLevel: 0.7, stability: 0.8, accent: 'Ominous' },
+    settings: { language: 'EN', speed: 0.8, pitch: 0.85, temperature: 0.6, emotionalDepth: 0.9, clarity: 0.7, breathingLevel: 0.7, stability: 0.8, accent: 'Deep Documentary' },
     vibe: 'Horror Narrator',
   },
   {
@@ -510,7 +510,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Whimsical Fairytale Teller',
     description: 'A warm, gentle female voice with a magical and enchanting tone.',
     category: 'Storytelling',
-    settings: { language: 'EN', speed: 0.95, pitch: 1.15, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.3, stability: 0.85, accent: 'Enchanting' },
+    settings: { language: 'EN', speed: 0.95, pitch: 1.15, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.3, stability: 0.85, accent: 'British Warm' },
     vibe: 'Fairytale Teller',
   },
   {
@@ -518,7 +518,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Epic Action Narrator',
     description: 'A powerful, fast-paced male voice with a dramatic and intense delivery.',
     category: 'Storytelling',
-    settings: { language: 'EN', speed: 1.3, pitch: 1.0, temperature: 0.8, emotionalDepth: 0.9, clarity: 0.85, breathingLevel: 0.4, stability: 0.7, accent: 'American' },
+    settings: { language: 'EN', speed: 1.3, pitch: 1.0, temperature: 0.8, emotionalDepth: 0.9, clarity: 0.85, breathingLevel: 0.4, stability: 0.7, accent: 'Deep Documentary' },
     vibe: 'Action Narrator',
   },
   {
@@ -526,7 +526,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Soothing Bedtime Reader',
     description: 'A very soft, calm, and soothing female voice, designed to be relaxing.',
     category: 'Storytelling',
-    settings: { language: 'EN', speed: 0.8, pitch: 1.05, temperature: 0.3, emotionalDepth: 0.7, clarity: 0.95, breathingLevel: 0.5, stability: 0.9, accent: 'Gentle' },
+    settings: { language: 'EN', speed: 0.8, pitch: 1.05, temperature: 0.3, emotionalDepth: 0.7, clarity: 0.95, breathingLevel: 0.5, stability: 0.9, accent: 'Gentle Therapist' },
     vibe: 'Bedtime Story',
   },
   {
@@ -534,7 +534,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Cozy Campfire Storyteller',
     description: 'A friendly, engaging male voice with an intimate feel.',
     category: 'Storytelling',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.95, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.85, breathingLevel: 0.3, stability: 0.8, accent: 'American' },
+    settings: { language: 'EN', speed: 1.0, pitch: 0.95, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.85, breathingLevel: 0.3, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Sincere',
   },
   {
@@ -542,7 +542,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Spanish Announcer',
     description: 'A clear, energetic male voice with a Castilian Spanish accent for commercials.',
     category: 'Languages',
-    settings: { language: 'ES', speed: 1.1, pitch: 1.0, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.2, stability: 0.8, accent: 'Spanish' },
+    settings: { language: 'ES', speed: 1.1, pitch: 1.0, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.2, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Motivational',
   },
   {
@@ -550,7 +550,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'French Artist',
     description: 'A thoughtful, soft-spoken female voice with a Parisian accent, pondering art.',
     category: 'Languages',
-    settings: { language: 'FR', speed: 0.9, pitch: 1.1, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.4, stability: 0.8, accent: 'French' },
+    settings: { language: 'FR', speed: 0.9, pitch: 1.1, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.4, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Emotional',
   },
   {
@@ -558,7 +558,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Japanese Guide',
     description: 'A polite, friendly female voice with a standard Japanese accent, for tour guides.',
     category: 'Languages',
-    settings: { language: 'JA', speed: 1.0, pitch: 1.15, temperature: 0.5, emotionalDepth: 0.4, clarity: 0.9, breathingLevel: 0.2, stability: 0.9, accent: 'Japanese' },
+    settings: { language: 'JA', speed: 1.0, pitch: 1.15, temperature: 0.5, emotionalDepth: 0.4, clarity: 0.9, breathingLevel: 0.2, stability: 0.9, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -566,7 +566,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Russian General',
     description: 'A deep, stern, and commanding male voice with a strong Russian accent.',
     category: 'Languages',
-    settings: { language: 'RU', speed: 0.95, pitch: 0.85, temperature: 0.5, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.3, stability: 0.85, accent: 'Russian' },
+    settings: { language: 'RU', speed: 0.95, pitch: 0.85, temperature: 0.5, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.3, stability: 0.85, accent: 'Neutral EN' },
     vibe: 'Villain',
   },
   {
@@ -574,15 +574,15 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Mandarin Teacher',
     description: 'A clear, patient female voice with a standard Mandarin accent for lessons.',
     category: 'Languages',
-    settings: { language: 'ZH', speed: 0.9, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.3, clarity: 0.95, breathingLevel: 0.2, stability: 0.9, accent: 'Mandarin' },
+    settings: { language: 'ZH', speed: 0.9, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.3, clarity: 0.95, breathingLevel: 0.2, stability: 0.9, accent: 'Neutral EN' },
     vibe: 'Sincere',
   },
   {
     id: 'vp_73',
     name: 'Sci-Fi Ship AI',
     description: 'A calm, ethereal, and slightly robotic female voice for a starship computer.',
-    category: 'Storytelling',
-    settings: { language: 'EN', speed: 1.0, pitch: 1.2, temperature: 0.2, emotionalDepth: 0.1, clarity: 1.0, breathingLevel: 0.0, stability: 1.0, accent: 'Robotic' },
+    category: 'Characters',
+    settings: { language: 'EN', speed: 1.0, pitch: 1.2, temperature: 0.2, emotionalDepth: 0.1, clarity: 1.0, breathingLevel: 0.0, stability: 1.0, accent: 'Neutral EN' },
     vibe: 'Sincere',
   },
   {
@@ -590,7 +590,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'True Crime Podcaster',
     description: 'A serious, deliberate male voice, building suspense for a mystery.',
     category: 'Storytelling',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.3, stability: 0.8, accent: 'American' },
+    settings: { language: 'EN', speed: 1.0, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.3, stability: 0.8, accent: 'Deep Documentary' },
     vibe: 'Documentary',
   },
   {
@@ -598,7 +598,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Italian Chef',
     description: 'A passionate, cheerful male voice with a thick Italian accent, describing food.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.1, pitch: 1.05, temperature: 0.8, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.4, stability: 0.7, accent: 'Italian' },
+    settings: { language: 'EN', speed: 1.1, pitch: 1.05, temperature: 0.8, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.4, stability: 0.7, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -606,7 +606,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'South African Local',
     description: 'A friendly, rhythmic female voice with a distinct South African accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.0, pitch: 1.1, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.85, breathingLevel: 0.2, stability: 0.8, accent: 'South African' },
+    settings: { language: 'EN', speed: 1.0, pitch: 1.1, temperature: 0.7, emotionalDepth: 0.6, clarity: 0.85, breathingLevel: 0.2, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Friendly',
   },
   {
@@ -614,7 +614,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Gritty Cyberpunk Narrator',
     description: 'A weary, cynical male voice for a dystopian future story.',
     category: 'Storytelling',
-    settings: { language: 'EN', speed: 0.95, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.75, accent: 'American' },
+    settings: { language: 'EN', speed: 0.95, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.75, accent: 'American Reels Style' },
     vibe: 'Dramatic',
   },
   {
@@ -622,7 +622,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Jamaican Reggae Host',
     description: 'A laid-back, rhythmic male voice with a thick Jamaican Patois accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.95, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'Jamaican' },
+    settings: { language: 'EN', speed: 1.0, pitch: 0.95, temperature: 0.8, emotionalDepth: 0.6, clarity: 0.8, breathingLevel: 0.3, stability: 0.7, accent: 'Neutral EN' },
     vibe: 'Smooth Jazz DJ',
   },
   {
@@ -630,7 +630,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Swedish Designer',
     description: 'A clean, minimalist female voice with a gentle Swedish accent, talking about design.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 0.95, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.3, clarity: 0.95, breathingLevel: 0.1, stability: 0.9, accent: 'Swedish' },
+    settings: { language: 'EN', speed: 0.95, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.3, clarity: 0.95, breathingLevel: 0.1, stability: 0.9, accent: 'Neutral EN' },
     vibe: 'Sincere',
   },
   {
@@ -638,7 +638,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Nigerian Actor',
     description: 'A rich, resonant male voice with a confident Nigerian (Nollywood) accent.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 1.05, pitch: 0.9, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.3, stability: 0.8, accent: 'Nigerian' },
+    settings: { language: 'EN', speed: 1.05, pitch: 0.9, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.3, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Dramatic',
   },
   {
@@ -646,7 +646,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Mexican Telenovela Star',
     description: 'A passionate, dramatic female voice with a clear Mexican Spanish accent.',
     category: 'Accents',
-    settings: { language: 'ES', speed: 1.1, pitch: 1.1, temperature: 0.8, emotionalDepth: 1.0, clarity: 0.85, breathingLevel: 0.3, stability: 0.7, accent: 'Mexican' },
+    settings: { language: 'ES', speed: 1.1, pitch: 1.1, temperature: 0.8, emotionalDepth: 1.0, clarity: 0.85, breathingLevel: 0.3, stability: 0.7, accent: 'Neutral EN' },
     vibe: 'Emotional',
   },
   {
@@ -654,7 +654,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Greek Philosopher',
     description: 'A thoughtful, older male voice with a distinct Greek accent, posing deep questions.',
     category: 'Accents',
-    settings: { language: 'EN', speed: 0.85, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.4, stability: 0.85, accent: 'Greek' },
+    settings: { language: 'EN', speed: 0.85, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.4, stability: 0.85, accent: 'British Warm' },
     vibe: 'Sincere',
   },
   {
@@ -662,7 +662,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Velvet Whisper',
     description: 'A deep, smooth, and extremely close female whisper, like velvet against the ear.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.8, pitch: 0.9, temperature: 0.4, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.8, stability: 0.9, accent: 'Intimate' },
+    settings: { language: 'EN', speed: 0.8, pitch: 0.9, temperature: 0.4, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.8, stability: 0.9, accent: 'Whisper Accent' },
     vibe: 'Whispering',
   },
   {
@@ -670,7 +670,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Warm Intimate',
     description: 'A warm, comforting, and emotionally close female voice, speaking softly and slowly.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.85, pitch: 1.0, temperature: 0.5, emotionalDepth: 0.9, clarity: 0.9, breathingLevel: 0.6, stability: 0.85, accent: 'Warm' },
+    settings: { language: 'EN', speed: 0.85, pitch: 1.0, temperature: 0.5, emotionalDepth: 0.9, clarity: 0.9, breathingLevel: 0.6, stability: 0.85, accent: 'Whisper Accent' },
     vibe: 'Soft ASMR',
   },
   {
@@ -678,7 +678,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Deep Sweet Whisper',
     description: 'A very deep, resonant female whisper that is both sweet and soothing.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.8, pitch: 0.85, temperature: 0.4, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.9, stability: 0.9, accent: 'Deep' },
+    settings: { language: 'EN', speed: 0.8, pitch: 0.85, temperature: 0.4, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.9, stability: 0.9, accent: 'Whisper Accent' },
     vibe: 'Whispering',
   },
   {
@@ -686,7 +686,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Breathy Soft Girl',
     description: 'A light, airy, and very breathy young female voice, gentle and sweet.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.15, temperature: 0.5, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 1.0, stability: 0.8, accent: 'Breathy' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.15, temperature: 0.5, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 1.0, stability: 0.8, accent: 'Whisper Accent' },
     vibe: 'Soft ASMR',
   },
   {
@@ -694,7 +694,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Gentle Seductive Whisper',
     description: 'A slow, sensual, and gentle female whisper with a confident, alluring tone.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.85, pitch: 1.0, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.7, stability: 0.8, accent: 'Seductive' },
+    settings: { language: 'EN', speed: 0.85, pitch: 1.0, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.7, stability: 0.8, accent: 'Whisper Accent' },
     vibe: 'Whispering',
   },
   {
@@ -702,7 +702,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Sweet Deep ASMR',
     description: 'A female ASMR voice combining a sweet tone with a deep, resonant whisper.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.8, pitch: 0.95, temperature: 0.4, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.9, stability: 0.9, accent: 'ASMR' },
+    settings: { language: 'EN', speed: 0.8, pitch: 0.95, temperature: 0.4, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.9, stability: 0.9, accent: 'Whisper Accent' },
     vibe: 'Soft ASMR',
   },
   {
@@ -710,7 +710,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Sultry Comfort Whisper',
     description: 'A comforting and warm female whisper with a sultry, slow, and relaxing pace.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.8, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.7, stability: 0.85, accent: 'Sultry' },
+    settings: { language: 'EN', speed: 0.8, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.7, stability: 0.85, accent: 'Whisper Accent' },
     vibe: 'Whispering',
   },
   {
@@ -718,7 +718,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Romantic Whisper Muse',
     description: 'A tender, romantic female whisper, full of emotion and warmth.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.05, temperature: 0.6, emotionalDepth: 1.0, clarity: 0.9, breathingLevel: 0.6, stability: 0.8, accent: 'Romantic' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.05, temperature: 0.6, emotionalDepth: 1.0, clarity: 0.9, breathingLevel: 0.6, stability: 0.8, accent: 'Whisper Accent' },
     vibe: 'Emotional',
   },
   {
@@ -726,7 +726,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Sensual Warm Whisper',
     description: 'A sexually warm, deeply intimate female voice, speaking very closely and softly.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.85, pitch: 0.95, temperature: 0.7, emotionalDepth: 0.9, clarity: 0.85, breathingLevel: 0.8, stability: 0.8, accent: 'Sensual' },
+    settings: { language: 'EN', speed: 0.85, pitch: 0.95, temperature: 0.7, emotionalDepth: 0.9, clarity: 0.85, breathingLevel: 0.8, stability: 0.8, accent: 'Whisper Accent' },
     vibe: 'Whispering',
   },
   {
@@ -734,7 +734,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Soft Heartbeat Whisper',
     description: 'A rhythmic, calming female whisper, paced like a slow, steady heartbeat.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.75, pitch: 1.0, temperature: 0.3, emotionalDepth: 0.7, clarity: 0.95, breathingLevel: 0.5, stability: 0.95, accent: 'Rhythmic' },
+    settings: { language: 'EN', speed: 0.75, pitch: 1.0, temperature: 0.3, emotionalDepth: 0.7, clarity: 0.95, breathingLevel: 0.5, stability: 0.95, accent: 'Whisper Accent' },
     vibe: 'Calm Therapist',
   },
   {
@@ -742,7 +742,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Ear-to-Ear Angel',
     description: 'A binaural-style female whisper, creating an intimate, close-up, ear-to-ear effect.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.85, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.9, stability: 0.9, accent: 'Binaural' },
+    settings: { language: 'EN', speed: 0.85, pitch: 1.1, temperature: 0.4, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.9, stability: 0.9, accent: 'Whisper Accent' },
     vibe: 'Soft ASMR',
   },
   {
@@ -750,7 +750,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Close Whisper Therapist',
     description: 'A reassuring, close, and gentle female whisper for therapy and relaxation.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.8, pitch: 1.0, temperature: 0.4, emotionalDepth: 0.8, clarity: 0.95, breathingLevel: 0.5, stability: 0.9, accent: 'Therapeutic' },
+    settings: { language: 'EN', speed: 0.8, pitch: 1.0, temperature: 0.4, emotionalDepth: 0.8, clarity: 0.95, breathingLevel: 0.5, stability: 0.9, accent: 'Gentle Therapist' },
     vibe: 'Calm Therapist',
   },
   {
@@ -758,7 +758,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Turkish Soft Whisper',
     description: 'A soft, intimate female whisper with a gentle, melodic Turkish accent.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'TR', speed: 0.9, pitch: 1.05, temperature: 0.6, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.7, stability: 0.8, accent: 'Turkish' },
+    settings: { language: 'TR', speed: 0.9, pitch: 1.05, temperature: 0.6, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.7, stability: 0.8, accent: 'Turkish Soft Emotional' },
     vibe: 'Whispering',
   },
   {
@@ -766,7 +766,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'German Velvet Accent',
     description: 'A smooth, deep female whisper with a soft, delicate German accent.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'DE', speed: 0.85, pitch: 0.95, temperature: 0.5, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.6, stability: 0.85, accent: 'German' },
+    settings: { language: 'DE', speed: 0.85, pitch: 0.95, temperature: 0.5, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.6, stability: 0.85, accent: 'German Soft' },
     vibe: 'Whispering',
   },
   {
@@ -774,7 +774,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Urdu Sweet Whisper',
     description: 'A warm, sweet, and poetic female whisper with a soft Urdu accent.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'UR', speed: 0.9, pitch: 1.0, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.7, stability: 0.8, accent: 'Urdu' },
+    settings: { language: 'UR', speed: 0.9, pitch: 1.0, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.7, stability: 0.8, accent: 'Urdu Emotional' },
     vibe: 'Emotional',
   },
   {
@@ -782,7 +782,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Arabic Warm Whisper',
     description: 'A rich, warm, and inviting female whisper with a gentle Arabic accent.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'AR', speed: 0.85, pitch: 0.95, temperature: 0.6, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.6, stability: 0.85, accent: 'Arabic' },
+    settings: { language: 'AR', speed: 0.85, pitch: 0.95, temperature: 0.6, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.6, stability: 0.85, accent: 'Arabic Velvet' },
     vibe: 'Whispering',
   },
   {
@@ -790,7 +790,7 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'French Intimate Whisper',
     description: 'A chic, sensual female whisper with a soft, romantic French accent.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'FR', speed: 0.9, pitch: 1.1, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.7, stability: 0.8, accent: 'French' },
+    settings: { language: 'FR', speed: 0.9, pitch: 1.1, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.7, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Whispering',
   },
   {
@@ -798,71 +798,159 @@ export const defaultVoiceProfiles: VoiceProfile[] = [
     name: 'Italian Soft Murmur',
     description: 'A passionate, soft female whisper with a melodic and gentle Italian accent.',
     category: 'Soft Intimate Whisper',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.05, temperature: 0.7, emotionalDepth: 0.9, clarity: 0.8, breathingLevel: 0.6, stability: 0.8, accent: 'Italian' },
+    settings: { language: 'EN', speed: 0.9, pitch: 1.05, temperature: 0.7, emotionalDepth: 0.9, clarity: 0.8, breathingLevel: 0.6, stability: 0.8, accent: 'Neutral EN' },
     vibe: 'Emotional',
   },
   {
     id: 'vp_101',
     name: 'Calm Motivational Speaker',
     description: 'A clear, steady female voice with a calm yet powerful tone for inspiring messages.',
-    category: 'Motivational & Deep Voices',
-    settings: { language: 'EN', speed: 0.95, pitch: 1.05, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.2, stability: 0.85, accent: 'American' },
+    category: 'Motivational & Deep',
+    settings: { language: 'EN', speed: 0.95, pitch: 1.05, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.9, breathingLevel: 0.2, stability: 0.85, accent: 'Neutral EN' },
     vibe: 'Motivational',
   },
   {
     id: 'vp_102',
     name: 'Deep Focus Mentor',
     description: 'A deep, resonant male voice, speaking slowly and clearly for focus and mindset coaching.',
-    category: 'Motivational & Deep Voices',
-    settings: { language: 'EN', speed: 0.9, pitch: 0.85, temperature: 0.4, emotionalDepth: 0.7, clarity: 0.95, breathingLevel: 0.3, stability: 0.9, accent: 'Neutral' },
+    category: 'Motivational & Deep',
+    settings: { language: 'EN', speed: 0.9, pitch: 0.85, temperature: 0.4, emotionalDepth: 0.7, clarity: 0.95, breathingLevel: 0.3, stability: 0.9, accent: 'Deep Documentary' },
     vibe: 'Calm Therapist',
   },
   {
     id: 'vp_103',
     name: 'Old Wise Man',
     description: 'A deep, slow, and resonant elderly male voice, full of wisdom and life experience.',
-    category: 'Motivational & Deep Voices',
-    settings: { language: 'EN', speed: 0.85, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.9, clarity: 0.8, breathingLevel: 0.4, stability: 0.8, accent: 'British' },
+    category: 'Motivational & Deep',
+    settings: { language: 'EN', speed: 0.85, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.9, clarity: 0.8, breathingLevel: 0.4, stability: 0.8, accent: 'British Warm' },
     vibe: 'Sincere',
   },
   {
     id: 'vp_104',
     name: 'Soft Elder Therapist',
     description: 'A gentle, warm, and empathetic elderly female voice, offering comfort and guidance.',
-    category: 'Motivational & Deep Voices',
-    settings: { language: 'EN', speed: 0.9, pitch: 1.0, temperature: 0.4, emotionalDepth: 1.0, clarity: 0.9, breathingLevel: 0.3, stability: 0.85, accent: 'Neutral' },
+    category: 'Motivational & Deep',
+    settings: { language: 'EN', speed: 0.9, pitch: 1.0, temperature: 0.4, emotionalDepth: 1.0, clarity: 0.9, breathingLevel: 0.3, stability: 0.85, accent: 'Gentle Therapist' },
     vibe: 'Calm Therapist',
   },
   {
     id: 'vp_105',
     name: 'Powerful Deep Chest Voice',
     description: 'A very deep, powerful male voice with strong resonance and a cinematic feel.',
-    category: 'Motivational & Deep Voices',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.8, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.4, stability: 0.8, accent: 'American' },
+    category: 'Motivational & Deep',
+    settings: { language: 'EN', speed: 1.0, pitch: 0.8, temperature: 0.7, emotionalDepth: 0.8, clarity: 0.85, breathingLevel: 0.4, stability: 0.8, accent: 'Deep Documentary' },
     vibe: 'Dramatic',
   },
   {
     id: 'vp_106',
     name: 'Slow Mindset Coach',
     description: 'A deliberate, calm male voice, speaking slowly to emphasize key mindset principles.',
-    category: 'Motivational & Deep Voices',
-    settings: { language: 'EN', speed: 0.85, pitch: 0.95, temperature: 0.5, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.2, stability: 0.9, accent: 'American' },
+    category: 'Motivational & Deep',
+    settings: { language: 'EN', speed: 0.85, pitch: 0.95, temperature: 0.5, emotionalDepth: 0.7, clarity: 0.9, breathingLevel: 0.2, stability: 0.9, accent: 'American Reels Style' },
     vibe: 'Motivational',
   },
   {
     id: 'vp_107',
     name: 'Gentle Psychological Guide',
     description: 'A soft-spoken, clear female voice, explaining psychological concepts with empathy.',
-    category: 'Motivational & Deep Voices',
-    settings: { language: 'EN', speed: 0.95, pitch: 1.05, temperature: 0.4, emotionalDepth: 0.8, clarity: 0.95, breathingLevel: 0.3, stability: 0.9, accent: 'Neutral' },
+    category: 'Motivational & Deep',
+    settings: { language: 'EN', speed: 0.95, pitch: 1.05, temperature: 0.4, emotionalDepth: 0.8, clarity: 0.95, breathingLevel: 0.3, stability: 0.9, accent: 'Gentle Therapist' },
     vibe: 'Sincere',
   },
   {
     id: 'vp_108',
     name: 'Epic Narrator Voice',
     description: 'A grand, cinematic male voice perfect for movie trailers and epic storytelling.',
-    category: 'Motivational & Deep Voices',
-    settings: { language: 'EN', speed: 1.0, pitch: 0.9, temperature: 0.8, emotionalDepth: 0.9, clarity: 0.9, breathingLevel: 0.3, stability: 0.75, accent: 'American' },
+    category: 'Motivational & Deep',
+    settings: { language: 'EN', speed: 1.0, pitch: 0.9, temperature: 0.8, emotionalDepth: 0.9, clarity: 0.9, breathingLevel: 0.3, stability: 0.75, accent: 'Indian Cinematic' },
     vibe: 'Dramatic',
+  },
+  {
+    id: 'vp_109',
+    name: 'Old Man Horror',
+    description: 'A slow, creepy, and slightly shaky elderly male voice, perfect for classic horror.',
+    category: 'Ultra-Horror',
+    settings: { language: 'EN', speed: 0.8, pitch: 0.9, temperature: 0.6, emotionalDepth: 0.8, clarity: 0.7, breathingLevel: 0.5, stability: 0.6, accent: 'Whisper Accent' },
+    vibe: 'Horror Narrator',
+  },
+  {
+    id: 'vp_110',
+    name: 'Wicked Witch',
+    description: 'A high-pitched, cackling, and sinister female voice with a sharp tone.',
+    category: 'Ultra-Horror',
+    settings: { language: 'EN', speed: 1.1, pitch: 1.3, temperature: 0.8, emotionalDepth: 0.9, clarity: 0.8, breathingLevel: 0.4, stability: 0.7, accent: 'Neutral EN' },
+    vibe: 'Villain',
+  },
+  {
+    id: 'vp_111',
+    name: 'Demonic Entity',
+    description: 'A deep, layered, and distorted voice with reverb and low harmonics.',
+    category: 'Ultra-Horror',
+    settings: { language: 'EN', speed: 0.9, pitch: 0.7, temperature: 0.7, emotionalDepth: 0.9, clarity: 0.6, breathingLevel: 0.6, stability: 0.5, accent: 'Deep Documentary' },
+    vibe: 'Horror Narrator',
+  },
+  {
+    id: 'vp_112',
+    name: 'Possessed Whisper',
+    description: 'A raspy, close-mic whisper with an eerie, unsettling undertone.',
+    category: 'Ultra-Horror',
+    settings: { language: 'EN', speed: 0.85, pitch: 1.0, temperature: 0.5, emotionalDepth: 0.8, clarity: 0.8, breathingLevel: 0.9, stability: 0.7, accent: 'Whisper Accent' },
+    vibe: 'Whispering',
+  },
+  {
+    id: 'vp_113',
+    name: 'Ghost Voice',
+    description: 'An ethereal, airy voice with a slight echo, sounding distant and cold.',
+    category: 'Ultra-Horror',
+    settings: { language: 'EN', speed: 0.9, pitch: 1.2, temperature: 0.3, emotionalDepth: 0.6, clarity: 0.9, breathingLevel: 0.2, stability: 0.8, accent: 'Whisper Accent' },
+    vibe: 'Horror Narrator',
+  },
+  {
+    id: 'vp_114',
+    name: 'Monster Growl',
+    description: 'A very deep, guttural, and inhuman voice with a low growl.',
+    category: 'Ultra-Horror',
+    settings: { language: 'EN', speed: 0.9, pitch: 0.6, temperature: 0.9, emotionalDepth: 0.8, clarity: 0.5, breathingLevel: 0.7, stability: 0.4, accent: 'Deep Documentary' },
+    vibe: 'Villain',
+  },
+  {
+    id: 'vp_115',
+    name: 'Fantasy Epic Sage',
+    description: 'A deep, wise, and ancient male voice, narrating tales of myth and magic.',
+    category: 'Storytelling',
+    settings: { language: 'EN', speed: 0.9, pitch: 0.85, temperature: 0.6, emotionalDepth: 0.9, clarity: 0.85, breathingLevel: 0.4, stability: 0.8, accent: 'British Warm' },
+    vibe: 'Dramatic',
+  },
+  {
+    id: 'vp_116',
+    name: 'Hard Sci-Fi Narrator',
+    description: 'A clear, precise, and slightly detached female voice for complex science fiction.',
+    category: 'Storytelling',
+    settings: { language: 'EN', speed: 1.05, pitch: 1.05, temperature: 0.3, emotionalDepth: 0.2, clarity: 0.95, breathingLevel: 0.1, stability: 0.95, accent: 'Neutral EN' },
+    vibe: 'Documentary',
+  },
+  {
+    id: 'vp_117',
+    name: 'Historical Chronicler',
+    description: 'An elegant, formal female voice, narrating historical events with grace.',
+    category: 'Storytelling',
+    settings: { language: 'EN', speed: 0.95, pitch: 1.0, temperature: 0.4, emotionalDepth: 0.5, clarity: 0.9, breathingLevel: 0.2, stability: 0.9, accent: 'British Warm' },
+    vibe: 'Sincere',
+  },
+  {
+    id: 'vp_118',
+    name: 'Suspenseful Mystery Host',
+    description: 'A deliberate, hushed male voice, building tension for a thrilling mystery.',
+    category: 'Storytelling',
+    settings: { language: 'EN', speed: 0.9, pitch: 0.9, temperature: 0.5, emotionalDepth: 0.7, clarity: 0.8, breathingLevel: 0.5, stability: 0.8, accent: 'American Reels Style' },
+    vibe: 'Horror Narrator',
+  },
+  {
+    id: 'vp_119',
+    name: 'Adventurous Kid Narrator',
+    description: 'A bright, energetic young voice, full of excitement for a kid\'s adventure story.',
+    category: 'Storytelling',
+    settings: { language: 'EN', speed: 1.2, pitch: 1.3, temperature: 0.8, emotionalDepth: 0.7, clarity: 0.85, breathingLevel: 0.2, stability: 0.7, accent: 'American Reels Style' },
+    vibe: 'Friendly',
   }
 ];

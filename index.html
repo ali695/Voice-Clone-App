@@ -6,41 +6,100 @@
     <title>VoiceGen Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         
-        /* Custom scrollbar for a modern look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background-color: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: #cbd5e1; /* slate-300 */
-            border-radius: 4px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background-color: #334155; /* slate-700 */
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: #94a3b8; /* slate-400 */
-        }
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background-color: #475569; /* slate-600 */
+        :root {
+            /* Shared */
+            --font-main: 'Inter', sans-serif;
+            --ease-in-out: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Light Theme */
+            --bg-light: #f3f4f6; /* gray-100 */
+            --bg-grid-light: rgba(0, 0, 0, 0.05);
+            --text-light-primary: #111827; /* gray-900 */
+            --text-light-secondary: #6b7280; /* gray-500 */
+            --card-bg-light: rgba(255, 255, 255, 0.75);
+            --card-border-light: rgba(0, 0, 0, 0.07);
+            --card-shadow-light: 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            --control-bg-light: #f3f4f6; /* gray-100 */
+            --control-hover-bg-light: #e5e7eb; /* gray-200 */
+            --accent-glow-light: 0 0 15px rgba(59, 130, 246, 0.3); /* blue-500 */
+            
+            /* Primary Button (Light) */
+            --btn-primary-gradient-light: linear-gradient(145deg, #A982FF, #6C47FF);
+            --btn-primary-shadow-light: 0 4px 15px -3px rgba(108, 71, 255, 0.4);
+            --btn-primary-shadow-hover-light: 0 6px 20px -3px rgba(108, 71, 255, 0.5);
+
+            /* Secondary Button (Light) */
+            --btn-secondary-gradient-light: linear-gradient(145deg, #13E1A8, #00C98D);
+            --btn-secondary-shadow-light: 0 4px 15px -3px rgba(0, 201, 141, 0.3);
+            --btn-secondary-shadow-hover-light: 0 6px 20px -3px rgba(0, 201, 141, 0.4);
+            
+            /* Dark Theme - Cinematic Studio Redesign */
+            --bg-dark: #0a0910;
+            --bg-grid-dark: rgba(255, 255, 255, 0.03);
+            --text-dark-primary: #f8fafc; /* slate-50 */
+            --text-dark-secondary: #94a3b8; /* slate-400 */
+            --card-bg-dark: rgba(20, 19, 30, 0.5); /* Frosted dark purple */
+            --card-border-dark: rgba(255, 255, 255, 0.08);
+            --card-shadow-dark: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --control-bg-dark: rgba(10, 9, 20, 0.5); /* Darker frosted */
+            --control-hover-bg-dark: rgba(30, 29, 40, 0.7);
+            --neon-cyan: #22d3ee;
+            --neon-purple: #a78bfa;
+            --neon-blue: #38bdf8;
+            --neon-cyan-glow: 0 0 15px -3px rgba(34, 211, 238, 0.4);
+            --neon-purple-glow: 0 0 15px -3px rgba(167, 139, 250, 0.4);
+            --generate-gradient: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+            --generate-shadow: 0 8px 25px -5px rgba(100, 150, 255, 0.3);
+            --generate-shadow-hover: 0 10px 30px -5px rgba(120, 170, 255, 0.4);
         }
 
-        /* Custom animation for collapsible sections */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        body {
+            font-family: var(--font-main);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'kern';
+            transition: var(--ease-in-out);
+            transition-property: background-color, color;
+            position: relative;
         }
-        .animate-fade-in {
-            animation: fadeIn 0.3s ease-out forwards;
+
+        html:not(.dark) body {
+            background-color: var(--bg-light);
+            background-image: radial-gradient(circle at 1px 1px, var(--bg-grid-light) 1px, transparent 0);
+            background-size: 24px 24px;
+            color: var(--text-light-primary);
+        }
+
+        html.dark body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 1px 1px, var(--bg-grid-dark) 1px, transparent 0),
+                radial-gradient(ellipse at center, rgba(30, 20, 60, 0.3) 0%, transparent 70%);
+            background-size: 24px 24px, 100% 100%;
+            color: var(--text-dark-primary);
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background-color: transparent; }
+        html:not(.dark) ::-webkit-scrollbar-thumb { background-color: #d1d5db; border-radius: 4px; border: 2px solid transparent; background-clip: content-box; }
+        html.dark ::-webkit-scrollbar-thumb { background-color: #475569; border-radius: 4px; border: 2px solid transparent; background-clip: content-box; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        
+        @keyframes pulse-glow-dark {
+            0%, 100% { box-shadow: var(--generate-shadow); }
+            50% { box-shadow: var(--generate-shadow-hover); }
+        }
+        @keyframes pulse-glow-light {
+            0%, 100% { box-shadow: var(--btn-primary-shadow-light); }
+            50% { box-shadow: var(--btn-primary-shadow-hover-light); }
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) skewX(-20deg); }
+            100% { transform: translateX(200%) skewX(-20deg); }
         }
     </style>
 <script type="importmap">

@@ -1,3 +1,7 @@
+export type ViralAccent = 
+    'Neutral EN' | 'British Warm' | 'American Reels Style' | 'German Soft' | 
+    'Turkish Soft Emotional' | 'Urdu Emotional' | 'Arabic Velvet' | 
+    'Indian Cinematic' | 'Deep Documentary' | 'Viral Short-Form' | 'Whisper Accent' | 'Gentle Therapist';
 
 export interface VoiceSettings {
     language: 'EN' | 'UR' | 'DE' | 'AR' | 'HI' | 'TR' | 'ES' | 'FR' | 'JA' | 'RU' | 'ZH';
@@ -8,7 +12,7 @@ export interface VoiceSettings {
     clarity: number;
     breathingLevel: number;
     stability: number;
-    accent: string;
+    accent: ViralAccent | string; // Allow string for backward compatibility/custom input if needed
 }
 
 export type Vibe = 
