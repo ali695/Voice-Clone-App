@@ -177,19 +177,57 @@ export const VoiceLibrary: React.FC<VoiceLibraryProps> = ({
 
     const handleDragStart = (e: React.DragEvent<HTMLDivElement>, profileId: string) => { e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', profileId); setDraggedItemId(profileId); };
     const handleDragEnd = () => { setDraggedItemId(null); setDropTargetId(null); };
-    const handleDragOver = (e: React.DragEvent<HTMLDivElement>, profileId: string) => { e.preventDefault(); if (draggedItemId && draggedItemId !== profileId) setDropTargetId(profileId); };
-    
-    const handleDrop = (e: React.DragEvent<HTMLDivElement>, dropProfile: VoiceProfile) => {
+
+    const handleItemDragOver = (e: React.DragEvent<HTMLDivElement>, profileId: string) => {
+        e.preventDefault(); e.stopPropagation();
+        if (draggedItemId && draggedItemId !== profileId) setDropTargetId(profileId);
+    };
+
+    const handleFolderDragOver = (e: React.DragEvent<HTMLDivElement>, category: string) => {
         e.preventDefault();
+        setDropTargetId(`folder-${category}`);
+    };
+
+    const handleFolderDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+            setDropTargetId(null);
+        }
+    };
+
+    const handleItemDrop = (e: React.DragEvent<HTMLDivElement>, dropTargetProfile: VoiceProfile) => {
+        e.preventDefault(); e.stopPropagation();
+        const draggedProfileId = e.dataTransfer.getData('text/plain');
+        if (!draggedProfileId || draggedProfileId === dropTargetProfile.id) { handleDragEnd(); return; }
+
+        const fromIndex = profiles.findIndex(p => p.id === draggedProfileId);
+        const toIndex = profiles.findIndex(p => p.id === dropTargetProfile.id);
+        if (fromIndex === -1 || toIndex === -1) { handleDragEnd(); return; }
+
+        const reorderedProfiles = [...profiles];
+        const [movedProfile] = reorderedProfiles.splice(fromIndex, 1);
+        movedProfile.category = dropTargetProfile.category;
+
+        const newToIndex = reorderedProfiles.findIndex(p => p.id === dropTargetProfile.id);
+        reorderedProfiles.splice(newToIndex, 0, movedProfile);
+
+        onReorderProfiles(reorderedProfiles);
+        handleDragEnd();
+    };
+
+    const handleFolderDrop = (e: React.DragEvent<HTMLDivElement>, targetCategory: string) => {
+        e.preventDefault(); e.stopPropagation();
         const draggedProfileId = e.dataTransfer.getData('text/plain');
         const draggedProfile = profiles.find(p => p.id === draggedProfileId);
-        if (!draggedProfile || draggedProfile.id === dropProfile.id || draggedProfile.category !== dropProfile.category) { handleDragEnd(); return; }
-        const reordered = [...profiles];
-        const from = reordered.findIndex(p => p.id === draggedProfileId);
-        const to = reordered.findIndex(p => p.id === dropProfile.id);
-        if (from !== -1 && to !== -1) {
-            const [removed] = reordered.splice(from, 1); reordered.splice(to, 0, removed); onReorderProfiles(reordered);
-        }
+
+        if (!draggedProfile || draggedProfile.category === targetCategory) { handleDragEnd(); return; }
+
+        const fromIndex = profiles.findIndex(p => p.id === draggedProfileId);
+        const reorderedProfiles = [...profiles];
+        const [movedProfile] = reorderedProfiles.splice(fromIndex, 1);
+        movedProfile.category = targetCategory;
+        reorderedProfiles.push(movedProfile); // Add to end of list
+
+        onReorderProfiles(reorderedProfiles);
         handleDragEnd();
     };
 
@@ -231,8 +269,9 @@ export const VoiceLibrary: React.FC<VoiceLibraryProps> = ({
                     Object.entries(groupedProfiles).map(([category, voices]: [string, VoiceProfile[]]) => {
                         const isExpanded = expandedFolders.has(category);
                         const CategoryIcon = categoryIcons[category] || MyVoicesIcon;
+                        const isFolderDropTarget = dropTargetId === `folder-${category}`;
                         return (
-                            <div key={category} className="dark:bg-black/20 rounded-2xl transition-all duration-300 group">
+                            <div key={category} className={`dark:bg-black/20 rounded-2xl transition-all duration-300 group ${isFolderDropTarget ? 'outline outline-2 outline-offset-2 outline-blue-500 dark:outline-[var(--neon-cyan)]' : ''}`}>
                                 <button 
                                     onClick={() => toggleFolder(category)} 
                                     className="w-full flex justify-between items-center p-4 text-left transition-all duration-300 rounded-2xl group-hover:dark:bg-slate-800/40 group-hover:-translate-y-0.5 group-hover:shadow-lg"
@@ -249,12 +288,29 @@ export const VoiceLibrary: React.FC<VoiceLibraryProps> = ({
                                     <ChevronDownIcon className={`w-5 h-5 transition-transform duration-300 text-slate-500 ${isExpanded ? 'rotate-180' : ''}`} />
                                 </button>
                                 {isExpanded && (
-                                    <div className="px-3 pb-3 space-y-2 animate-fade-in" onDragOver={(e) => e.preventDefault()}>
+                                    <div 
+                                        id={`folder-${category}`}
+                                        className="px-3 pb-3 space-y-2 animate-fade-in"
+                                        onDragOver={(e) => handleFolderDragOver(e, category)}
+                                        onDragLeave={handleFolderDragLeave}
+                                        onDrop={(e) => handleFolderDrop(e, category)}
+                                    >
                                         {voices.map(profile => (
                                             <VoiceItem key={profile.id} profile={profile} isActive={activeProfileId === profile.id} isDragged={draggedItemId === profile.id} isDropTarget={dropTargetId === profile.id} onSelect={() => onSelectProfile(profile.id)} onDelete={() => onDeleteProfile(profile.id)} onUpdate={(updates) => onUpdateProfile(profile.id, updates)}
-                                                dragAndDropProps={{ draggable: true, onDragStart: (e) => handleDragStart(e, profile.id), onDragEnd: handleDragEnd, onDragOver: (e) => handleDragOver(e, profile.id), onDrop: (e) => handleDrop(e, profile), }}
+                                                dragAndDropProps={{ 
+                                                    draggable: true, 
+                                                    onDragStart: (e) => handleDragStart(e, profile.id), 
+                                                    onDragEnd: handleDragEnd, 
+                                                    onDragOver: (e) => handleItemDragOver(e, profile.id), 
+                                                    onDrop: (e) => handleItemDrop(e, profile), 
+                                                }}
                                             />
                                         ))}
+                                        {voices.length === 0 && draggedItemId && (
+                                            <div className="p-6 border-2 border-dashed rounded-xl text-center text-sm text-slate-400 dark:text-slate-500 border-slate-300 dark:border-slate-700 pointer-events-none">
+                                                Move to "{category}"
+                                            </div>
+                                        )}
                                     </div>
                                 )}
                             </div>
